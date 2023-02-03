@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIVA CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Chakra+Petch&family=Dongle:wght@300&family=Josefin+Sans:wght@200&family=Luxurious+Roman&family=Mochiy+Pop+P+One&family=Roboto:ital,wght@0,300;1,100;1,300&family=Yanone+Kaffeesatz:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            min-height: 1000px;
+            background: #fff;
+            margin: 50px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+        }
+
+        .container .left_side {
+            position: relative;
+            background: #003147;
+            padding: 40px;
+        }
+
+        .profileText {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+        }
+
+        .profileText .imgBx {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profileText .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profileText h2 {
+            color: #fff;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1.4em;
+        }
+
+        .profileText h2 span {
+            font-size: 0.8em;
+            font-weight: 300;
+        }
+
+        .contactInfo {
+            padding-top: 40px;
+        }
+
+        .title {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .contactInfo ul {
+            position: relative;
+        }
+
+        .contactInfo ul li {
+            position: relative;
+            list-style: none;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .contactInfo ul li .icon {
+            display: inline-block;
+            width: 30px;
+            font-size: 18px;
+            color: #03a9f4;
+        }
+
+        .text0 {
+            color: #fff;
+        }
+
+        .contactInfo ul li span {
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .contactInfo.education li {
+            margin-bottom: 15px;
+        }
+
+        .contactInfo.education h5 {
+            color: #03a9f4;
+            font-weight: 500;
+        }
+
+        .contactInfo.education h4:nth-child(2) {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .contactInfo.education h4 {
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .contactInfo.languag .percent {
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background: #081921;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .contactInfo.languag .percent div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #03a9f4;
+        }
+
+        .container .right_side {
+            position: relative;
+            background: #fff;
+            padding: 40px;
+        }
+
+        .about {
+            margin-bottom: 50px;
+        }
+
+        .about:last-child {
+            margin-bottom: 0;
+        }
+
+        .title2 {
+            color: #003147;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+        }
+
+        .about .box {
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0;
+        }
+
+        .about .box .year_company {
+            min-width: 150px;
+        }
+
+        .about .box .year_company h5 {
+            text-transform: uppercase;
+            color: #848c90;
+            font-weight: 600;
+        }
+
+        .about .box .text h4 {
+            text-transform: uppercase;
+            color: #2a7da2;
+            font-size: 16px;
+        }
+
+        .skills .box {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skills .box h4 {
+            text-transform: uppercase;
+            color: #848c99;
+            font-weight: 500;
+        }
+
+        .skills .box .percent {
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background: #f0f0f0;
+        }
+
+        .skills .box .percent div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #03a9f4;
+        }
+
+        .intrest ul li .icon {
+            display: inline-block;
+            width: 30px;
+            font-size: 18px;
+        }
+
+        .intrest ul li {
+            color: #333;
+            list-style: none;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+
+        .intrest ul {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .intrest ul li .fa {
+            color: #03a9f4;
+            font-size: 18px;
+            width: 20px;
+        }
+
+        @media(max-width:1000px) {
+            .container {
+                margin: 10px;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .intrest ul {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+            .about .box {
+                flex-direction: column;
+            }
+
+            .about .box .year_company {
+                min-width: 150px;
+                margin-bottom: 5px;
+            }
+
+            .skills .box {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left_side">
+            <div class="profileText">
+                <div class="imgBx">
+                    <img
+                        src="https://lh3.googleusercontent.com/a/AEdFTp6mgzi3GBHpm6oWX40aULZAgrZXHeLi2muwHovWjQ=s288-p-rw-no">
+                </div>
+                <h2>SIVA N<br><span>Full stack Developer</span></h2>
+            </div>
+            <div class="contactInfo">
+                <h3 class="title">Contact Info</h3>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <span class="text">+91 8072153544</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                        <span class="text">siva29061997@gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i></span>
+                        <a href="https://master--cute-banoffee-e26689.netlify.app/" class="text0"
+                            target="_blank">Portfolio</a>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                        <a href="https://www.linkedin.com/in/siva-n-a57167250/" class="text0"
+                            target="_blank">LinkedIn</a>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span class="text">Theni, TamilNadu, India</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactInfo education">
+                <h3 class="title">Education</h3>
+                <ul>
+                    <li>
+                        <h5>June-2022 - December-2022</h5>
+                        <h4>Full Stack Developer</h4>
+                        <h4>GUVI, Chennai</h4>
+                    </li>
+                    <li>
+                        <h5>2015 - 2017</h5>
+                        <h4>ITI (Turner)</h4>
+                        <h4>Theni Govt ITI</h4>
+                    </li>
+                    <li>
+                        <h5>2013 - 2015</h5>
+                        <h4>12 th</h4>
+                        <h4>Nsvv boy's hig sec school</h4>
+                    </li>
+                    <li>
+                        <h5>2012 - 2013</h5>
+                        <h4>10 th</h4>
+                        <h4>RTU</h4>
+                    </li>
+                </ul>
+            </div>
+            <div class="contactInfo languag">
+                <h3 class="title">languages</h3>
+                <ul>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percent">
+                            <div style="width: 80%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Tamil</span>
+                        <span class="percent">
+                            <div style="width: 95%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Hindi</span>
+                        <span class="percent">
+                            <div style="width: 40%;"></div>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right_side">
+            <div class="about">
+                <h2 class="title2">Profile</h2>
+                <p>I am an enthusiastic, self-motivated, reliable, responsible and hard working person. I am a mature
+                    team worker and adaptable to all challenging situations.
+                    I am able to work well both in a team
+                    environment as well as using own initiative. I am able to work well under pressure and adhere to
+                    strict deadlines.</p>
+            </div>
+            <div class="about">
+                <h2 class="title2">Experiance</h2>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2022 - present</h5>
+                        <h5>Renacon</h5>
+                    </div>
+                    <div class="text">
+                        <h4 style="margin-bottom: 10px;">mechanical maintenance</h4>
+                        <ul>
+                            <li>the implementation of preventive maintenance programs;</li>
+                            <li>the implementation of special maintenance and control of technical results;</li>
+                            <li>arrangements for handling operations or long-term storage</li>
+                            <li>the collection and entry of data necessary to update the facility and equipment
+                                management archive</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5>2017 - 2022</h5>
+                        <h5>Aqua Sub Engineering</h5>
+                    </div>
+                    <div class="text">
+                        <h4 style="margin-bottom: 10px;">mechanical maintenance</h4>
+                        <ul>
+                            <li>the implementation of preventive maintenance programs;</li>
+                            <li>the implementation of special maintenance and control of technical results;</li>
+                            <li>arrangements for handling operations or long-term storage</li>
+                            <li>the collection and entry of data necessary to update the facility and equipment
+                                management archive</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="about skills">
+                <h2 class="title2">Profesnal Skills</h2>
+                <div class="box">
+                    <h4>Html</h4>
+                    <div class="percent">
+                        <div style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>CSS</h4>
+                    <div class="percent">
+                        <div style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>BOOTSTRAP</h4>
+                    <div class="percent">
+                        <div style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Javascript</h4>
+                    <div class="percent">
+                        <div style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>React Js</h4>
+                    <div class="percent">
+                        <div style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Node Js</h4>
+                    <div class="percent">
+                        <div style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Mongo DB</h4>
+                    <div class="percent">
+                        <div style="width: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="about">
+                <h2 class="title2">Projects</h2>
+                <div class="box">
+                    <div class="year_company">
+                        <h5 style="color: #081921;margin-bottom: 5px;">Tech Used :</h5>
+                        <h5 style="margin-bottom: 5px;">React</h5>
+                        <h5 style="margin-bottom: 5px;">Node js</h5>
+                        <h5 style="margin-bottom: 5px;">express js</h5>
+                        <h5 style="margin-bottom: 5px;">mongodb</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Admin Crud App</h4>
+                        <p>This is Fullstack MERN website made it as a Crud app.
+                            This application is used to Admin analysed.</p><br />
+                        <a style="color: #045980;" href="https://fancy-flan-b146e9.netlify.app/"
+                            class="text0" target="_blank">click here to Admin crud app</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5 style="color: #081921;margin-bottom: 5px;">Tech Used :</h5>
+                        <h5 style="margin-bottom: 5px;">React</h5>
+                        <h5 style="margin-bottom: 5px;">Node js</h5>
+                        <h5 style="margin-bottom: 5px;">express js</h5>
+                        <h5 style="margin-bottom: 5px;">mongodb</h5>
+                    </div>
+                    <div class="text">
+                        <h4>E-Commerce</h4>
+                        <p>This is Fullstack MERN website made it as a Ecommerce.
+                            This application is used to buy our products.</p><br />
+                        <a style="color: #045980;" href="https://stately-medovik-aea808.netlify.app/" class="text0"
+                            target="_blank">click here to E-Commerce</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5 style="color: #081921;margin-bottom: 5px;">Tech Used :</h5>
+                        <h5 style="margin-bottom: 5px;">React</h5>
+                        <h5 style="margin-bottom: 5px;">Node js</h5>
+                        <h5 style="margin-bottom: 5px;">express js</h5>
+                        <h5 style="margin-bottom: 5px;">mongodb</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Explorer - Blog</h4>
+                        <p>This is Fullstack MERN website made it as a Blog.
+                            This application is used to Post your thoughts.</p><br /><a style="color: #045980;"
+                            href="https://singular-gingersnap-47de01.netlify.app/" class="text0" target="_blank">click
+                            here to
+                            Explorer - Blog</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year_company">
+                        <h5 style="color: #081921;margin-bottom: 5px;">Tech Used :</h5>
+                        <h5 style="margin-bottom: 5px;">html</h5>
+                        <h5 style="margin-bottom: 5px;">css</h5>
+                        <h5 style="margin-bottom: 5px;">javascript</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Weather Tracker</h4>
+                        <p>This website made it as a Weather Tracker.
+                            This site is used to know your Current Location Weather.</p><br />
+                        <a style="color: #045980;" href="https://ubiquitous-salmiakki-f4c374.netlify.app/" class="text0"
+                            target="_blank">click here to Weather Tracker</a>
+                    </div>
+                </div>
+            </div>
+            <div class="about intrest">
+                <h2 class="title2">Interest</h2>
+                <ul>
+                    <!-- <li>
+                        <span class="icon"><i class="fa fa-trophy" aria-hidden="true"></i></span>
+                        <span class="text">Gaming</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                        <span class="text">Reading</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></i></i></span>
+                        <span class="text">Drawing</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-cutlery" aria-hidden="true"></i></i></span>
+                        <span class="text">Cooking</span>
+                    </li> -->
+                    <li><i class="fa fa-trophy" aria-hidden="true"></i>Gaming</li>
+                    <li><i class="fa fa-book" aria-hidden="true"></i>Reading</li>
+                    <li><i class="fa fa-pencil" aria-hidden="true"></i>Drawing</li>
+                    <li><i class="fa fa-cutlery" aria-hidden="true"></i>Cooking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
